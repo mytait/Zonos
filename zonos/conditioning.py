@@ -51,6 +51,14 @@ class Conditioner(nn.Module):
 
 
 # ------- ESPEAK CONTAINMENT ZONE ------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Windows code start####
+import platform
+if platform.system() == "Windows":
+    os.environ['PHONEMIZER_ESPEAK_PATH'] = f'C:\\Program Files\\eSpeak NG'
+    os.environ['PHONEMIZER_ESPEAK_LIBRARY'] = f'C:\\Program Files\\eSpeak NG\\libespeak-ng.dll'
+#Windows code end####
+
 import re
 import unicodedata
 

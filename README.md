@@ -43,6 +43,7 @@ Zonos follows a straightforward architecture: text normalization and phonemizati
 ### Python
 
 ```python
+
 import torch
 import torchaudio
 from zonos.model import Zonos
@@ -86,50 +87,54 @@ _For repeated sampling we highly recommend using the gradio interface instead, a
 
 ## Installation
 
-**At the moment this repository only supports Linux systems (preferably Ubuntu 22.04/24.04) with recent NVIDIA GPUs (3000-series or newer, 6GB+ VRAM).**
-
 See also [Docker Installation](#docker-installation)
 
-#### System dependencies
+**GPU:** Project supports recent NVIDIA GPUs (3000-series or newer, 6GB+ VRAM).
 
-Zonos depends on the eSpeak library phonemization. You can install it on Ubuntu with the following command:
+**Linux:** (preferably Ubuntu 22.04/24.04)
+
+**Windows:** tested on 11
+
+### Setup environment
+
+create a python 3.10 environment and clone the repository into it.
+
+
+Zonos depends on the eSpeak library phonemization. 
+
+**Linux:**
 
 ```bash
 apt install -y espeak-ng
 ```
 
-#### Python dependencies
+**windows:**
 
-We highly recommend using a recent version of [uv](https://docs.astral.sh/uv/#installation) for installation. If you don't have uv installed, you can install it via pip: `pip install -U uv`.
+either run this in a command shell with administrator rights:
 
-##### Installing into a new uv virtual environment (recommended)
-
-```bash
-uv sync
-uv sync --extra compile
+```
+winget install --id=eSpeak-NG.eSpeak-NG  -e
 ```
 
-##### Installing into the system/actived environment using uv
+or use the lastest installer from their github:
 
-```bash
-uv pip install -e .
-uv pip install -e .[compile]
+```
+https://github.com/espeak-ng/espeak-ng/releases
 ```
 
-##### Installing into the system/actived environment using pip
+### Install project
 
-```bash
-pip install -e .
-pip install --no-build-isolation -e .[compile]
 ```
+pip install -r requirements1.txt -r requirements2.txt 
+``` 
+
 
 ##### Confirm that it's working
 
 For convenience we provide a minimal example to check that the installation works:
 
 ```bash
-uv run sample.py
-# python sample.py
+python sample.py
 ```
 
 ## Docker installation

@@ -1,0 +1,4 @@
+#for some reason conv1d fails if this is not installed in advance with a "no module called torch" message
+--extra-index-url=https://download.pytorch.org/whl/cu124
+torch==2.5.1
+torchaudio==2.5.1
