@@ -70,10 +70,7 @@ torchaudio.save("sample.wav", wavs[0], model.autoencoder.sampling_rate)
 python gradio_interface.py
 ```
 
-**IMPORTANT FOR WINDOWS**: Gradio will ask you to use adress: 0.0.0.0:7860. That does not work! **use http://127.0.0.1:7860/ instead**
-
-
-This should produce a `sample.wav` file in your project root directory.
+**FOR WINDOWS**: Gradio will ask you to use adress: 0.0.0.0:7860. That does not work! **use http://127.0.0.1:7860/ instead**
 
 _For repeated sampling we highly recommend using the gradio interface instead, as the minimal example needs to load the model every time it is run._
 
